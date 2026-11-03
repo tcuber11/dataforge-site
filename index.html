@@ -119,8 +119,7 @@ code,.mono{font-family:var(--mono)}
 .hero .btn.primary:hover{background:transparent;color:var(--block-ink)}
 .hero :focus-visible,.solid :focus-visible{outline-color:var(--block-ink)}
 .cta-note{margin-top:16px;font-size:14.5px;color:var(--block-ink-2)}
-.cta-note a,.cta-alt a{color:var(--block-ink);font-weight:600;text-underline-offset:3px}
-.cta-alt{margin-top:8px;font-size:14.5px;color:var(--block-ink-2)}
+.cta-note a{color:var(--block-ink);font-weight:600;text-underline-offset:3px}
 @media(max-width:520px){.cta .btn{width:100%}}
 
 /* the route: DEV -> STAGING -> PROD with each environment's default write mode */
@@ -281,7 +280,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
       <a class="btn" href="#unduh" data-i="hero.team">Jalankan untuk tim</a>
     </div>
     <p class="cta-note" id="cta-note">Gratis · versi 0.2.0 · macOS (Apple silicon) dan Windows 10/11 (x64). Di Linux, <a href="#unduh">jalankan server</a> dan buka di browser.</p>
-    <p class="cta-alt" id="cta-alt" hidden><a id="cta-alt-link" href="#unduh"></a></p>
   </div>
 </section>
 
@@ -556,9 +554,6 @@ const EN = {
   "hero.sub": "A database client, change reviews and an AI assistant in one workspace. Explore and query 50 engines; every change to prod is reviewed first, then deployed exactly as approved.",
   "hero.team": "Run it for your team",
   "hero.cta.mac": "Download for macOS", "hero.cta.win": "Download for Windows",
-  "hero.other.mac": "Also for macOS (Apple silicon)", "hero.other.win": "Also for Windows 10/11 (x64)",
-  "hero.note.mac": "Free · Apple silicon · version 0.2.0",
-  "hero.note.win": "Free · Windows 10/11 (x64) · version 0.2.0 · no administrator rights needed",
   "hero.note.other": "Free · version 0.2.0 · macOS (Apple silicon) and Windows 10/11 (x64). On Linux, <a href=\"#unduh\">run the server</a> and use it in the browser.",
   "route.label": "The route of a change",
   "route.dev": "runs right away, confirms the dangerous ones", "route.staging": "the same, with its own write credentials", "route.prod": "change request, two reviewers",
@@ -613,9 +608,6 @@ const EN = {
 // Indonesian comes from the page itself, plus the strings the script sets.
 const ID = {
   "hero.cta.mac": "Unduh untuk macOS", "hero.cta.win": "Unduh untuk Windows",
-  "hero.other.mac": "Juga tersedia untuk macOS (Apple silicon)", "hero.other.win": "Juga tersedia untuk Windows 10/11 (x64)",
-  "hero.note.mac": "Gratis · Apple silicon · versi 0.2.0",
-  "hero.note.win": "Gratis · Windows 10/11 (x64) · versi 0.2.0 · tanpa hak administrator",
   "hero.note.other": document.getElementById("cta-note").innerHTML,
 };
 document.querySelectorAll("[data-i]").forEach((el) => {
@@ -645,14 +637,10 @@ function renderCTA(t) {
   const second = first === "win" ? "mac" : "win";
   setButton(document.getElementById("cta-primary"), first, t);
   setButton(document.getElementById("cta-secondary"), second, t);
-  // A known platform gets one button plus a quiet link to the other; others see both.
-  document.getElementById("cta-secondary").hidden = OS !== "other";
-  const alt = document.getElementById("cta-alt");
-  alt.hidden = OS === "other";
-  const link = document.getElementById("cta-alt-link");
-  link.href = DL[second];
-  link.textContent = t[`hero.other.${second}`];
-  document.getElementById("cta-note").innerHTML = t[`hero.note.${OS}`];
+  // Both platforms always get a full button; the visitor's own comes first
+  // and is the primary one.
+  document.getElementById("cta-secondary").hidden = false;
+  document.getElementById("cta-note").innerHTML = t["hero.note.other"];
   // The visitor's platform card comes first in the download section.
   const dl = document.querySelector(".dl");
   if (OS === "win") dl.insertBefore(document.getElementById("dl-win"), document.getElementById("dl-mac"));
