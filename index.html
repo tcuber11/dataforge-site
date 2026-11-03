@@ -299,7 +299,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     </picture>
 
     <div class="facts rise">
-      <div><b>50</b><span data-i="fact.1">engine, 28 teruji di container sungguhan</span></div>
+      <div><b>50</b><span data-i="fact.1">engine, 38 teruji di server sungguhan</span></div>
       <div><b>2</b><span data-i="fact.2">reviewer wajib untuk setiap perubahan ke prod</span></div>
       <div><b>sha256</b><span data-i="fact.3">mengikat approval ke byte script yang di-deploy</span></div>
       <div><b>15</b><span data-i="fact.4">bahasa antarmuka, termasuk Arab (kanan ke kiri)</span></div>
@@ -364,7 +364,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <div class="wrap">
     <span class="kicker rise" aria-hidden="true"></span>
     <h2 class="rise" data-i="eng.h2">50 engine. Jujur soal mana yang sudah teruji.</h2>
-    <p class="lead rise" data-i="eng.lead">Setiap engine dijelaskan oleh descriptor di registry. 28 sudah diuji dengan container sungguhan; sisanya dibangun dari dokumentasi vendor dan diberi tanda sampai ada yang mengujinya.</p>
+    <p class="lead rise" data-i="eng.lead">Setiap engine dijelaskan oleh descriptor di registry. 38 sudah diuji dengan server sungguhan (container lokal atau layanan cloud); sisanya dibangun dari dokumentasi vendor dan diberi tanda sampai ada yang mengujinya.</p>
     <div class="board rise" id="board"></div>
     <p class="legend rise" data-i="eng.legend">Driver Go native, tanpa JDBC. Server yang kompatibel protokol bisa dipakai lewat Custom (MySQL) atau Custom (PostgreSQL).</p>
   </div>
@@ -527,10 +527,10 @@ const DL = {
 };
 
 const ENGINES = {
-  relational: [["Cloud Spanner",1],["CockroachDB",1],["Custom (MySQL)",1],["Custom (PostgreSQL)",1],["Dolt",1],["MariaDB",1],["MySQL",1],["Oracle",1],["PostgreSQL",1],["SQL Server / Azure SQL",1],["YugabyteDB (YSQL)",1],["Amazon Aurora PostgreSQL",0],["Citus",0],["Google AlloyDB",0],["Neon",0],["ParadeDB",0],["SingleStore",0],["Supabase",0]],
-  analytics: [["ClickHouse",1],["Google BigQuery",1],["Trino",1],["Amazon Redshift",0],["Apache Doris",0],["Databricks SQL",0],["Greenplum",0],["Snowflake",0],["StarRocks",0]],
-  chinese: [["TiDB",1],["GaussDB",0],["GoldenDB",0],["HighGo DB",0],["KingbaseES",0],["OceanBase (MySQL)",0],["openGauss",0],["PolarDB-X",0],["Vastbase",0]],
-  docs: [["Elasticsearch / OpenSearch",1],["MongoDB",1],["Redis",1],["Manticore Search",0]],
+  relational: [["Citus",1],["Cloud Spanner",1],["CockroachDB",1],["Custom (MySQL)",1],["Custom (PostgreSQL)",1],["Dolt",1],["Google AlloyDB",1],["MariaDB",1],["MySQL",1],["Neon",1],["Oracle",1],["ParadeDB",1],["PostgreSQL",1],["SQL Server / Azure SQL",1],["Supabase",1],["YugabyteDB (YSQL)",1],["Amazon Aurora PostgreSQL",0],["SingleStore",0]],
+  analytics: [["Apache Doris",1],["ClickHouse",1],["Google BigQuery",1],["Snowflake",1],["StarRocks",1],["Trino",1],["Amazon Redshift",0],["Databricks SQL",0],["Greenplum",0]],
+  chinese: [["openGauss",1],["TiDB",1],["GaussDB",0],["GoldenDB",0],["HighGo DB",0],["KingbaseES",0],["OceanBase (MySQL)",0],["PolarDB-X",0],["Vastbase",0]],
+  docs: [["Elasticsearch / OpenSearch",1],["Manticore Search",1],["MongoDB",1],["Redis",1]],
   lightweight: [["DuckDB",1],["SQLite",1]],
   graphvector: [["Neo4j",1],["Qdrant",1]],
   timeseries: [["InfluxDB 2",1],["TimescaleDB",1]],
@@ -558,7 +558,7 @@ const EN = {
   "route.label": "The route of a change",
   "route.dev": "runs right away, confirms the dangerous ones", "route.staging": "the same, with its own write credentials", "route.prod": "change request, two reviewers",
   "hero.alt": "The DataForge SQL editor: the navigator with shop (DEV), shop-mysql (STAGING) and shop-prod (PROD), a query joining customers and orders, and its results in the grid.",
-  "fact.1": "engines, 28 tested against real containers", "fact.2": "reviewers required for every change to prod", "fact.3": "binds an approval to the bytes that get deployed", "fact.4": "interface languages, Arabic right-to-left included",
+  "fact.1": "engines, 38 tested against real servers", "fact.2": "reviewers required for every change to prod", "fact.3": "binds an approval to the bytes that get deployed", "fact.4": "interface languages, Arabic right-to-left included",
   "video.h2": "DataForge in 45 seconds.", "video.cap": "Connect, query, review, deploy, then ask the AI for a draft.",
   "feat.h2": "One workspace for three jobs.", "feat.lead": "Used for hours every day by data engineers, DBAs and developers. Dense but calm; safety state is always visible without shouting.",
   "feat.1k": "Explore", "feat.1h": "A DBeaver-style navigator",
@@ -569,7 +569,7 @@ const EN = {
   "feat.3a": "Change requests with versions, reviews and deployments", "feat.3b": "Grid edits and CSV/XLSX imports become reviewable scripts", "feat.3c": "Backups, scheduled restores, transfers between databases", "feat.3d": "GitOps: SQL files from GitHub become change requests",
   "shot.engines": "New Connection: engines grouped DBX-style; untested ones are marked.", "shot.engines.alt": "The New Connection dialog: engines grouped by category, untested ones labelled UNTESTED.",
   "shot.dark": "Light and dark are equals; follow the system or pick one in the account menu.", "shot.dark.alt": "The same SQL editor in the dark theme.",
-  "eng.h2": "50 engines. Honest about which are tested.", "eng.lead": "Each engine is described by a descriptor in the registry. 28 have been tested against real containers; the rest are built from vendor documentation and marked until someone tests them.",
+  "eng.h2": "50 engines. Honest about which are tested.", "eng.lead": "Each engine is described by a descriptor in the registry. 38 have been tested against real servers (local containers or the cloud services); the rest are built from vendor documentation and marked until someone tests them.",
   "eng.legend": "Native Go drivers, no JDBC. Protocol-compatible servers work through Custom (MySQL) or Custom (PostgreSQL).",
   "gov.h2": "What gets deployed is exactly what was approved.", "gov.lead": "Each environment has its own rules. On prod a change follows a fixed route: draft, review, approve, deploy, and every step lands in the audit log.",
   "gov.1h": "Draft", "gov.2h": "In review", "gov.3h": "Approved", "gov.4h": "Deployed",
