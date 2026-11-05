@@ -223,6 +223,8 @@ code,.mono{font-family:var(--mono)}
 .dl .card .alt a{color:var(--blue);font-weight:600;text-underline-offset:3px}
 .dl ol{margin:18px 0 0;padding-left:20px;color:var(--ink-2);font-size:14px;display:grid;gap:7px}
 .dl .term{font-size:13px}
+.dl .card .via{display:block;margin-top:16px;font-size:14px;color:var(--ink-2)}
+.dl .card .via + .term{margin-top:8px}
 @media(max-width:1000px){.dl{grid-template-columns:1fr 1fr}.dl .card:last-child{grid-column:1/-1}}
 @media(max-width:700px){.dl{grid-template-columns:1fr}}
 
@@ -458,9 +460,11 @@ Signed in to http://localhost:3000 as you@example.com.
         <h3><svg aria-hidden="true"><use href="#apple"/></svg><span data-i="dl.mac.h">App macOS</span></h3>
         <p data-i="dl.mac.p">Apple silicon. Semua sudah di dalam: API, PostgreSQL untuk metadata, SQLite dan DuckDB. Tidak perlu Docker.</p>
         <a class="btn primary" id="dl-mac-btn" href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-macos-arm64.dmg" data-i="dl.mac.btn">Unduh .dmg</a>
+        <span class="via" data-i="dl.mac.cli">Atau lewat Homebrew:</span>
+        <div class="term">brew install --cask tcuber11/tap/dataforge</div>
         <ol>
           <li data-i="dl.mac.1" data-html>Buka .dmg dan seret DataForge ke Applications.</li>
-          <li data-i="dl.mac.2" data-html>Belum dinotarisasi: pertama kali, klik kanan DataForge → <em>Open</em> → <em>Open</em>.</li>
+          <li data-i="dl.mac.2">Ditandatangani dan dinotarisasi Apple: langsung terbuka, tanpa peringatan.</li>
           <li data-i="dl.mac.3">Buat akun owner di layar pertama; semua data tinggal di Mac kamu.</li>
         </ol>
       </div>
@@ -469,6 +473,9 @@ Signed in to http://localhost:3000 as you@example.com.
         <p data-i="dl.win.p">Windows 10/11 (x64). Isinya sama: API, PostgreSQL untuk metadata, SQLite dan DuckDB; WebView2 ikut terpasang bila belum ada. Terminal terintegrasi membuka PowerShell.</p>
         <a class="btn primary" id="dl-win-btn" href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64-setup.exe" data-i="dl.win.btn">Unduh installer (.exe)</a>
         <span class="alt" data-i="dl.win.msi" data-html>Atau <a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64.msi">.msi</a> untuk instalasi terkelola (per mesin, butuh hak administrator).</span>
+        <span class="via" data-i="dl.win.cli">Atau lewat Scoop:</span>
+        <div class="term">scoop bucket add dataforge https://github.com/tcuber11/scoop-bucket
+scoop install dataforge/dataforge</div>
         <ol>
           <li data-i="dl.win.1">Jalankan installer: terpasang untuk user kamu, tanpa hak administrator.</li>
           <li data-i="dl.win.2" data-html>Belum ditandatangani: kalau SmartScreen muncul, klik <em>More info</em> → <em>Run anyway</em>.</li>
@@ -503,7 +510,7 @@ make api &amp;&amp; make web</div>
       <details><summary data-i="q3">Bisa pakai langganan Claude Pro atau Max?</summary><p data-i="a3">Tidak di dalam DataForge: Anthropic tidak mengizinkan app pihak ketiga memakai login claude.ai, jadi Ask AI memakai API key. Tapi kalau kamu kerja di Claude Code atau Claude Desktop dengan langgananmu, sambungkan lewat MCP dan Claude bisa memakai DataForge dari sana.</p></details>
       <details><summary data-i="q4">Apa artinya "belum teruji"?</summary><p data-i="a4">Engine itu dibangun dari dokumentasi vendor dan memakai protokol yang sudah teruji (mis. PostgreSQL atau MySQL), tapi belum dijalankan terhadap server aslinya. Ia tetap bisa dipakai, dengan tanda yang jelas.</p></details>
       <details><summary data-i="q5">Ada untuk Windows atau Linux?</summary><p data-i="a5">Ada untuk Windows 10/11 (x64): installer per user tanpa hak administrator, atau MSI untuk instalasi terkelola. Linux belum punya app desktop; jalankan server dan buka DataForge di browser.</p></details>
-      <details><summary data-i="q6">Kenapa macOS atau Windows memperingatkan saat membuka app-nya?</summary><p data-i="a6">App belum ditandatangani Apple dan belum punya sertifikat code signing Windows. Di macOS: klik kanan DataForge.app → Open → Open, cukup sekali. Di Windows: di layar SmartScreen klik More info → Run anyway.</p></details>
+      <details><summary data-i="q6">Kenapa Windows memperingatkan saat membuka installer-nya?</summary><p data-i="a6">App macOS sudah ditandatangani dan dinotarisasi Apple, jadi langsung terbuka. Installer Windows belum punya sertifikat code signing: di layar SmartScreen klik More info → Run anyway, cukup sekali.</p></details>
     </div>
   </div>
 </section>
@@ -589,9 +596,9 @@ const EN = {
   "sec.5k": "Audit", "sec.5": "Append-only with redaction; every write, approval and deploy is recorded.",
   "sec.6k": "AI", "sec.6": "Off by default, can be off for prod, prompts are not stored in the audit log.",
   "dl.h2": "Use it yourself, or run it for your team.", "dl.lead": "Version 0.2.0. The desktop app for macOS and Windows is a personal client; the server is for teams that need shared reviews and audit.",
-  "dl.mac.h": "macOS app", "dl.mac.p": "Apple silicon. Everything is inside: the API, PostgreSQL for metadata, SQLite and DuckDB. No Docker needed.", "dl.mac.btn": "Download .dmg",
-  "dl.mac.1": "Open the .dmg and drag DataForge to Applications.", "dl.mac.2": "Not notarized yet: the first time, right-click DataForge → <em>Open</em> → <em>Open</em>.", "dl.mac.3": "Create the owner account on the first screen; all data stays on your Mac.",
-  "dl.win.h": "Windows app", "dl.win.p": "Windows 10/11 (x64). The same inside: the API, PostgreSQL for metadata, SQLite and DuckDB; WebView2 is installed too if it is missing. The integrated terminal opens PowerShell.", "dl.win.btn": "Download installer (.exe)",
+  "dl.mac.h": "macOS app", "dl.mac.p": "Apple silicon. Everything is inside: the API, PostgreSQL for metadata, SQLite and DuckDB. No Docker needed.", "dl.mac.btn": "Download .dmg", "dl.mac.cli": "Or with Homebrew:",
+  "dl.mac.1": "Open the .dmg and drag DataForge to Applications.", "dl.mac.2": "Signed and notarized by Apple: it opens right away, without a warning.", "dl.mac.3": "Create the owner account on the first screen; all data stays on your Mac.",
+  "dl.win.h": "Windows app", "dl.win.p": "Windows 10/11 (x64). The same inside: the API, PostgreSQL for metadata, SQLite and DuckDB; WebView2 is installed too if it is missing. The integrated terminal opens PowerShell.", "dl.win.btn": "Download installer (.exe)", "dl.win.cli": "Or with Scoop:",
   "dl.win.msi": "Or the <a href=\"https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64.msi\">.msi</a> for managed deployment (per machine, needs administrator rights).",
   "dl.win.1": "Run the installer: it installs for your user, without administrator rights.", "dl.win.2": "Not code-signed yet: if SmartScreen appears, click <em>More info</em> → <em>Run anyway</em>.", "dl.win.3": "Create the owner account on the first screen; all data stays on your PC.",
   "dl.srv.h": "Server for your team", "dl.srv.p": "A Go API, PostgreSQL for metadata, and the Next.js web UI. Your team opens it in a browser, from macOS, Windows or Linux.",
@@ -602,7 +609,7 @@ const EN = {
   "q3": "Can I use my Claude Pro or Max plan?", "a3": "Not inside DataForge: Anthropic doesn't allow third-party apps to use claude.ai sign-in, so Ask AI uses an API key. But if you work in Claude Code or Claude Desktop on your plan, connect them over MCP and Claude can use DataForge from there.",
   "q4": "What does \"untested\" mean?", "a4": "The engine was built from vendor documentation on a protocol that is tested (PostgreSQL or MySQL, for example), but has not been run against the real server yet. It works, and it is clearly marked.",
   "q5": "Is there a Windows or Linux version?", "a5": "Windows 10/11 (x64), yes: a per-user installer that needs no administrator rights, or an MSI for managed deployment. Linux has no desktop app yet; run the server and use DataForge in the browser.",
-  "q6": "Why does macOS or Windows warn me when I open the app?", "a6": "The app isn't signed by Apple yet and has no Windows code-signing certificate. On macOS: right-click DataForge.app → Open → Open, once. On Windows: on the SmartScreen screen click More info → Run anyway.",
+  "q6": "Why does Windows warn me when I open the installer?", "a6": "The macOS app is signed and notarized by Apple, so it opens right away. The Windows installer has no code-signing certificate yet: on the SmartScreen screen click More info → Run anyway, once.",
   "foot": "Screenshots and video use synthetic sample data.",
 };
 // Indonesian comes from the page itself, plus the strings the script sets.
