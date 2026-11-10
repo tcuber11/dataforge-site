@@ -329,8 +329,8 @@ kbd{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 
 
 /* download: three free cards; the visitor's platform is the highlighted one */
 /* subgrid: header, price, list, button and extras share rows across the cards, so the buttons line up */
-.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(5,auto);gap:20px;margin-top:clamp(52px,6vw,76px)}
-.plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px 26px 26px;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;min-width:0}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(7,auto);gap:20px;margin-top:clamp(52px,6vw,76px)}
+.plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px 26px 26px;display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0;min-width:0}
 .plan.hot{border-color:rgba(157,144,255,.55);box-shadow:0 0 0 1px rgba(157,144,255,.22),0 30px 80px -40px rgba(106,90,238,.75)}
 .plan .tag.top{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--accent),var(--accent-2));border-color:transparent;color:#fff;white-space:nowrap}
 .plan h3{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600}
@@ -341,13 +341,17 @@ kbd{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 
 .plan li{display:flex;gap:10px}
 .plan li svg{width:16px;height:16px;flex:none;color:var(--accent-hi);margin-top:4px}
 .plan>.btn{width:100%;margin-top:28px;align-self:start}
-.plan .act{padding-top:14px;display:grid;gap:10px;align-content:start}
+/* the extras below the button share the cards' rows too (note, "or via", command), so the commands line up */
+.plan .act{display:contents}
+.plan .act>.alt{grid-row:5;padding-top:14px}
+.plan .act>.via{grid-row:6;padding-top:10px}
+.plan .act>.term{grid-row:7;margin-top:10px;align-self:start}
 .plans:has(.hot) .plan:not(.hot) .btn.primary{background:rgba(255,255,255,.04);border-color:var(--line-2);box-shadow:none}
 .plans:has(.hot) .plan:not(.hot) .btn.primary:hover{background:rgba(255,255,255,.08);filter:none}
 .plan .alt{font-size:13px;color:var(--text-3)}
 .plan .alt a{color:var(--text-2)}
 .plan .term{font-size:12.5px}
-.plan .via{font-size:13px;color:var(--text-3);margin-top:4px}
+.plan .via{font-size:13px;color:var(--text-3)}
 @media(max-width:960px){.plans{grid-template-columns:1fr 1fr}.plan:last-child{grid-column:1/-1}}
 @media(max-width:640px){.plans{grid-template-columns:1fr}.plan:last-child{grid-column:auto}}
 
