@@ -438,7 +438,7 @@ footer .brand{color:var(--text)}
 <section class="hero">
   <div class="wrap">
     <div>
-      <a class="badge" href="#unduh"><svg aria-hidden="true"><use href="#sparkle"/></svg><span data-i="hero.badge">Baru · macOS 0.2.9 dan Windows 0.2.0</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      <a class="badge" href="#unduh"><svg aria-hidden="true"><use href="#sparkle"/></svg><span data-i="hero.badge">Baru · macOS dan Windows 0.2.9</span><svg aria-hidden="true"><use href="#arrow"/></svg></a>
       <h1 data-i="hero.h1" data-html>Query cepat.<br><span class="dim">Ubah dengan aman.</span></h1>
       <p class="sub" data-i="hero.sub">Database client, review perubahan, dan asisten AI dalam satu workspace. Jelajahi dan query 50 engine; setiap perubahan ke prod di-review dulu, lalu di-deploy persis seperti yang disetujui.</p>
       <!-- Both platforms always get a full button; the script puts the visitor's own first and makes it the primary one. -->
@@ -446,7 +446,7 @@ footer .brand{color:var(--text)}
         <a class="btn primary" id="cta-mac" href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-macos-arm64.dmg"><svg aria-hidden="true"><use href="#apple"/></svg><span data-i="hero.cta.mac">Unduh untuk macOS</span></a>
         <a class="btn" id="cta-win" href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64-setup.exe"><svg aria-hidden="true"><use href="#windows"/></svg><span data-i="hero.cta.win">Unduh untuk Windows</span></a>
       </div>
-      <p class="cta-note" data-i="hero.note" data-html>Gratis · macOS 0.2.9 (Apple silicon) · Windows 0.2.0 (10/11, x64). Di Linux, <a href="#unduh">jalankan server</a> dan buka di browser.</p>
+      <p class="cta-note" data-i="hero.note" data-html>Gratis · macOS 0.2.9 (Apple silicon) · Windows 0.2.9 (10/11, x64). Di Linux, <a href="#unduh">jalankan server</a> dan buka di browser.</p>
       <p class="chips-cap" data-i="hero.engines">Terhubung ke 50 engine, dari PostgreSQL sampai Kafka</p>
       <ul class="chips" aria-hidden="true">
         <li class="chip" title="PostgreSQL"><svg><use href="#e-pg"/></svg></li><li class="chip" title="MySQL"><svg><use href="#e-my"/></svg></li><li class="chip" title="ClickHouse"><svg><use href="#e-ch"/></svg></li><li class="chip" title="MongoDB"><svg><use href="#e-mo"/></svg></li><li class="chip" title="Snowflake"><svg><use href="#e-sf"/></svg></li><li class="chip" title="Apache Kafka"><svg><use href="#e-kf"/></svg></li>
@@ -713,7 +713,7 @@ Signed in to http://localhost:3000 as you@example.com.
   <div class="wrap">
     <div class="sec-head rise">
       <h2 data-i="dl.h2" data-html>Pakai sendiri,<br><span class="dim">atau jalankan untuk tim.</span></h2>
-      <p class="lead" data-i="dl.lead">macOS 0.2.9, Windows 0.2.0. App desktop untuk macOS dan Windows sebagai client pribadi; server untuk tim yang butuh review dan audit bersama.</p>
+      <p class="lead" data-i="dl.lead">macOS dan Windows 0.2.9. App desktop untuk macOS dan Windows sebagai client pribadi; server untuk tim yang butuh review dan audit bersama.</p>
     </div>
     <div class="plans rise">
       <article class="plan" id="dl-mac">
@@ -735,7 +735,7 @@ Signed in to http://localhost:3000 as you@example.com.
       <article class="plan" id="dl-win">
         <span class="tag top" hidden data-i="dl.this">Untuk perangkat ini</span>
         <h3><svg aria-hidden="true"><use href="#windows"/></svg><span data-i="dl.win.h">App Windows</span></h3>
-        <p class="price"><span data-i="dl.free">Gratis</span><small data-i="dl.win.ver">versi 0.2.0 · Windows 10/11 (x64)</small></p>
+        <p class="price"><span data-i="dl.free">Gratis</span><small data-i="dl.win.ver">versi 0.2.9 · Windows 10/11 (x64)</small></p>
         <ul>
           <li><svg aria-hidden="true"><use href="#check"/></svg><span data-i="dl.win.1">Isinya sama: API, PostgreSQL untuk metadata, SQLite dan DuckDB; WebView2 ikut terpasang bila belum ada</span></li>
           <li><svg aria-hidden="true"><use href="#check"/></svg><span data-i="dl.win.2">Terpasang untuk user kamu, tanpa hak administrator; terminal terintegrasi membuka PowerShell</span></li>
@@ -744,7 +744,6 @@ Signed in to http://localhost:3000 as you@example.com.
         </ul>
         <a class="btn primary pill" href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64-setup.exe" data-i="dl.win.btn">Unduh installer (.exe)</a>
         <div class="act">
-          <span class="alt" data-i="dl.win.msi" data-html>Atau <a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64.msi">.msi</a> untuk instalasi terkelola (per mesin, butuh hak administrator).</span>
           <span class="via" data-i="dl.win.cli">Atau lewat Scoop:</span>
           <div class="term">scoop bucket add dataforge https://github.com/tcuber11/scoop-bucket
 scoop install dataforge/dataforge</div>
@@ -783,7 +782,7 @@ make api &amp;&amp; make web</div>
       <details><summary><span data-i="q2">Apakah AI bisa melihat data saya?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a2">Asisten melihat metadata schema (nama tabel dan kolom), tanpa baris, kredensial atau host. Mode agent bisa mengambil contoh maksimal 20 baris dengan kolom sensitif di-mask, dan query-nya tetap lewat akun read-only. Semuanya mati sampai owner menyalakannya.</p></details>
       <details><summary><span data-i="q3">Bisa pakai langganan Claude Pro atau Max?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a3">Tidak di dalam DataForge: Anthropic tidak mengizinkan app pihak ketiga memakai login claude.ai, jadi Ask AI memakai API key. Tapi kalau kamu kerja di Claude Code atau Claude Desktop dengan langgananmu, sambungkan lewat MCP dan Claude bisa memakai DataForge dari sana.</p></details>
       <details><summary><span data-i="q4">Apa artinya "belum teruji"?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a4">Engine itu dibangun dari dokumentasi vendor dan memakai protokol yang sudah teruji (mis. PostgreSQL atau MySQL), tapi belum dijalankan terhadap server aslinya. Ia tetap bisa dipakai, dengan tanda yang jelas.</p></details>
-      <details><summary><span data-i="q5">Ada untuk Windows atau Linux?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a5">Ada untuk Windows 10/11 (x64): installer per user tanpa hak administrator, atau MSI untuk instalasi terkelola. Linux belum punya app desktop; jalankan server dan buka DataForge di browser.</p></details>
+      <details><summary><span data-i="q5">Ada untuk Windows atau Linux?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a5">Ada untuk Windows 10/11 (x64): installer per user tanpa hak administrator. Linux belum punya app desktop; jalankan server dan buka DataForge di browser.</p></details>
       <details><summary><span data-i="q6">Kenapa Windows memperingatkan saat membuka installer-nya?</span><svg aria-hidden="true"><use href="#plus"/></svg></summary><p data-i="a6">App macOS sudah ditandatangani dan dinotarisasi Apple, jadi langsung terbuka. Installer Windows belum punya sertifikat code signing: di layar SmartScreen klik More info → Run anyway, cukup sekali.</p></details>
     </div>
     <p class="faq-more rise" data-i="faq.more" data-html>Masih ada yang belum terjawab? <a href="https://github.com/tcuber11/dataforge-site/issues">Tanyakan lewat GitHub Issues</a>.</p>
@@ -800,12 +799,12 @@ make api &amp;&amp; make web</div>
         <div class="social"><a href="https://github.com/tcuber11/dataforge-site/releases" aria-label="Rilis di GitHub" data-i="foot.ghl" data-attr="aria-label"><svg aria-hidden="true"><use href="#github"/></svg></a></div>
       </div>
       <div class="fcol"><b data-i="foot.product">Produk</b><a href="#review" data-i="nav.review">Review</a><a href="#fitur" data-i="nav.features">Fitur</a><a href="#engine" data-i="nav.engines">Engine</a><a href="#pintasan" data-i="nav.shortcuts">Pintasan</a><a href="#ai">AI</a></div>
-      <div class="fcol"><b data-i="foot.dl">Unduh</b><a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-macos-arm64.dmg">macOS (.dmg)</a><a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64-setup.exe">Windows (.exe)</a><a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64.msi">Windows (.msi)</a><a href="#unduh" data-i="foot.srv">Server untuk tim</a></div>
+      <div class="fcol"><b data-i="foot.dl">Unduh</b><a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-macos-arm64.dmg">macOS (.dmg)</a><a href="https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64-setup.exe">Windows (.exe)</a><a href="#unduh" data-i="foot.srv">Server untuk tim</a></div>
       <div class="fcol"><b data-i="foot.res">Sumber</b><a href="#video" data-i="foot.video">Video 45 detik</a><a href="promo/index.html" data-i="foot.promo">Halaman video promo</a><a href="https://github.com/tcuber11/dataforge-site/releases" data-i="foot.gh">Rilis di GitHub</a><a href="https://github.com/tcuber11/dataforge-site/issues" data-i="foot.issues">Tanya lewat Issues</a><a href="#faq">FAQ</a></div>
       <div class="fcol"><b data-i="foot.lang">Bahasa</b><button type="button" data-lang="id" lang="id" aria-pressed="true">Bahasa Indonesia</button><button type="button" data-lang="en" lang="en" aria-pressed="false">English</button></div>
     </div>
     <div class="fbottom">
-      <span data-i="foot.copy">DataForge · macOS 0.2.9 · Windows 0.2.0</span>
+      <span data-i="foot.copy">DataForge · macOS · Windows 0.2.9</span>
       <span data-i="foot.note">Screenshot dan video memakai data contoh sintetis.</span>
     </div>
   </div>
@@ -873,11 +872,11 @@ const EN = {
   "meta.title": "DataForge — Query fast. Change safely.",
   "skip": "Skip to content", "nav.label": "Page",
   "nav.review": "Review", "nav.features": "Features", "nav.engines": "Engines", "nav.shortcuts": "Shortcuts", "nav.releases": "Releases", "nav.cta": "Download free",
-  "hero.badge": "New · macOS 0.2.9 and Windows 0.2.0",
+  "hero.badge": "New · macOS and Windows 0.2.9",
   "hero.h1": "Query fast.<br><span class=\"dim\">Change safely.</span>",
   "hero.sub": "A database client, change reviews and an AI assistant in one workspace. Explore and query 50 engines; every change to prod is reviewed first, then deployed exactly as approved.",
   "hero.cta.mac": "Download for macOS", "hero.cta.win": "Download for Windows",
-  "hero.note": "Free · macOS 0.2.9 (Apple silicon) · Windows 0.2.0 (10/11, x64). On Linux, <a href=\"#unduh\">run the server</a> and use it in the browser.",
+  "hero.note": "Free · macOS 0.2.9 (Apple silicon) · Windows 0.2.9 (10/11, x64). On Linux, <a href=\"#unduh\">run the server</a> and use it in the browser.",
   "hero.engines": "Connects to 50 engines, from PostgreSQL to Kafka",
   "hero.alt": "The DataForge SQL editor: the navigator with shop (DEV), shop-mysql (STAGING) and shop-prod (PROD), a query joining customers and orders, and its results in the grid.",
   "strip.cap": "42 of the 50 engines are tested against real servers. The rest are marked until someone tests them.",
@@ -936,7 +935,7 @@ const EN = {
   "sc.lead": "The SQL editor's and the workbench's default shortcuts. ⌘ on macOS, Ctrl on Windows and Linux; all of them can be changed in Settings → Shortcuts.",
   "sc.os": "Keyboard layout", "sc.btn": "Download and try it",
   "dl.h2": "Use it yourself,<br><span class=\"dim\">or run it for your team.</span>",
-  "dl.lead": "macOS 0.2.9, Windows 0.2.0. The desktop app for macOS and Windows is a personal client; the server is for teams that need shared reviews and audit.",
+  "dl.lead": "macOS and Windows 0.2.9. The desktop app for macOS and Windows is a personal client; the server is for teams that need shared reviews and audit.",
   "dl.this": "For this device", "dl.free": "Free",
   "dl.mac.h": "macOS app", "dl.mac.ver": "version 0.2.9 · Apple silicon",
   "dl.mac.1": "The API, PostgreSQL for metadata, SQLite and DuckDB are inside; no Docker needed",
@@ -944,13 +943,12 @@ const EN = {
   "dl.mac.3": "Open the .dmg and drag DataForge to Applications",
   "dl.mac.4": "The owner account is created on the first screen; all data stays on your Mac",
   "dl.mac.btn": "Download .dmg", "dl.mac.cli": "Or with Homebrew:",
-  "dl.win.h": "Windows app", "dl.win.ver": "version 0.2.0 · Windows 10/11 (x64)",
+  "dl.win.h": "Windows app", "dl.win.ver": "version 0.2.9 · Windows 10/11 (x64)",
   "dl.win.1": "The same inside: the API, PostgreSQL for metadata, SQLite and DuckDB; WebView2 is installed too if it is missing",
   "dl.win.2": "Installs for your user, without administrator rights; the integrated terminal opens PowerShell",
   "dl.win.3": "Not code-signed yet: if SmartScreen appears, click <em>More info</em> → <em>Run anyway</em>",
   "dl.win.4": "The owner account is created on the first screen; all data stays on your PC",
   "dl.win.btn": "Download installer (.exe)",
-  "dl.win.msi": "Or the <a href=\"https://github.com/tcuber11/dataforge-site/releases/latest/download/DataForge-windows-x64.msi\">.msi</a> for managed deployment (per machine, needs administrator rights).",
   "dl.win.cli": "Or with Scoop:",
   "dl.srv.h": "Server for your team", "dl.srv.ver": "Go API · PostgreSQL · Next.js web UI",
   "dl.srv.1": "Your team opens it in a browser, from macOS, Windows or Linux",
@@ -963,14 +961,14 @@ const EN = {
   "q2": "Can the AI see my data?", "a2": "The assistant sees schema metadata (table and column names), no rows, credentials or hosts. Agent mode may sample at most 20 rows with sensitive columns masked, and its queries still go through the read-only account. All of it stays off until an owner turns it on.",
   "q3": "Can I use my Claude Pro or Max plan?", "a3": "Not inside DataForge: Anthropic doesn't allow third-party apps to use claude.ai sign-in, so Ask AI uses an API key. But if you work in Claude Code or Claude Desktop on your plan, connect them over MCP and Claude can use DataForge from there.",
   "q4": "What does \"untested\" mean?", "a4": "The engine was built from vendor documentation on a protocol that is tested (PostgreSQL or MySQL, for example), but has not been run against the real server yet. It works, and it is clearly marked.",
-  "q5": "Is there a Windows or Linux version?", "a5": "Windows 10/11 (x64), yes: a per-user installer that needs no administrator rights, or an MSI for managed deployment. Linux has no desktop app yet; run the server and use DataForge in the browser.",
+  "q5": "Is there a Windows or Linux version?", "a5": "Windows 10/11 (x64), yes: a per-user installer that needs no administrator rights. Linux has no desktop app yet; run the server and use DataForge in the browser.",
   "q6": "Why does Windows warn me when I open the installer?", "a6": "The macOS app is signed and notarized by Apple, so it opens right away. The Windows installer has no code-signing certificate yet: on the SmartScreen screen click More info → Run anyway, once.",
   "faq.more": "Still have a question? <a href=\"https://github.com/tcuber11/dataforge-site/issues\">Ask on GitHub Issues</a>.",
   "foot.tag": "A database client, change reviews and an AI assistant in one workspace.",
   "foot.product": "Product", "foot.dl": "Download", "foot.srv": "Server for your team",
   "foot.res": "Resources", "foot.video": "The 45-second video", "foot.promo": "Promo video page", "foot.issues": "Ask on Issues", "foot.gh": "Releases on GitHub", "foot.ghl": "Releases on GitHub",
   "foot.lang": "Language",
-  "foot.copy": "DataForge · macOS 0.2.9 · Windows 0.2.0",
+  "foot.copy": "DataForge · macOS · Windows 0.2.9",
   "foot.note": "Screenshots and video use synthetic sample data.",
 };
 // Indonesian comes from the page itself.
